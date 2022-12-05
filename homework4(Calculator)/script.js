@@ -21,3 +21,5 @@ else if ((mathOperator == 'div') || (mathOperator == '/')){
 else {
     alert('Error!');
 }
+
+//Ипользуем метиод .trim и .toLowerCase для того чтобы отсеять ненуждные ответы для понимания нашего скрипта
