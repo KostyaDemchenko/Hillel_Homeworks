@@ -27,5 +27,6 @@ while (true) {
         ladder.showStep();
     } else {
         console.log("Invalid input, please enter 'up', 'down', 'showStep', or 'exit'");
+        break;
     }
 }
