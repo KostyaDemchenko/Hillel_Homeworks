@@ -1,49 +1,35 @@
 const userAge = prompt('Enter your age');
-const userSity = prompt('Enter your sity', 'Kiev, Amsterdam, Madrid');
+const userCity = prompt('Enter your city', 'Kiev, Amsterdam, Madrid');
 const userActivity = prompt('Say your favorite sport ?', 'Football, Basketball, Golf');
 
-let input = 0; 
-let alertSport, alertSity = 0;
+let input = 0;
+let alertSport = '';
+let alertCity = '';
 
-// Age case
-switch (true) {
-    case userAge === null:
-        alert('You didnt enter your age!');
-        break;
-    case parseInt(userAge) <= 0:
-        alert('How did you get here!');
-        break;
-    default:
-        input++;
+// Age validation
+if (userAge === null || isNaN(userAge) || parseInt(userAge) <= 0) {
+    alert('You did not enter a valid age!');
+} else {
+    input++;
 }
 
-//Sity case
-switch (true) {
-    case userSity === null:
-        alert('You didnt enter your sity!');
-        break;
-    case userSity.trim() === '':
-        alert('You didnt enter your sity!');
-        break;
-    default:
-        input++;
+// City validation
+if (userCity === null || userCity.trim() === '') {
+    alert('You did not enter a valid city!');
+} else {
+    input++;
 }
 
-//Activity case
-switch (true) {
-    case userActivity === null:
-        alert('You didnt enter your activity!');
-        break;
-    case userActivity.trim() === '':
-        alert('You didnt enter your activity!');
-        break;
-    default:
-        input++;
+// Activity validation
+if (userActivity === null || userActivity.trim() === '') {
+    alert('You did not enter a valid activity!');
+} else {
+    input++;
 }
 
-//Second part
+// Second part
 if (input === 3) {
-    switch (userActivity.trim()){
+    switch (userActivity.trim()) {
         case 'Football':
             alertSport = 'Do you want to be a Messi?';
             break;
@@ -56,14 +42,16 @@ if (input === 3) {
         default:
             alertSport = 'I wish you success in this sport';
     }
-    switch (userSity.trim()){
-        case 'Kiev' || 'Amsterdam' || 'Madrid':
-            alertSity = 'Oh cool you live in the capital!';  
+    switch (userCity.trim()) {
+        case 'Kiev':
+        case 'Amsterdam':
+        case 'Madrid':
+            alertCity = 'Oh cool you live in the capital!';
             break;
         default:
-            alertSity = 'You live in a beautiful city!';         
+            alertCity = 'You live in a beautiful city!';
     }
-    alert('You are ' + userAge + ' years old \n' + alertSity + '\n' + alertSport);
+    alert('You are ' + userAge + ' years old \n' + alertCity + '\n' + alertSport);
 }
 
-console.log(input)
+console.log(input);
