@@ -3,26 +3,25 @@ const userCity = prompt('Enter your city', 'Kiev, Amsterdam, Madrid');
 const userActivity = prompt('Say your favorite sport ?', 'Football, Basketball, Golf');
 
 let input = 0;
-let alertSport = '';
-let alertCity = '';
+let resultMessage = '';
 
 // Age validation
 if (userAge === null || isNaN(userAge) || parseInt(userAge) <= 0) {
-    alert('You did not enter a valid age!');
+    resultMessage = 'You did not enter a valid age!\n';
 } else {
     input++;
 }
 
 // City validation
 if (userCity === null || userCity.trim() === '') {
-    alert('You did not enter a valid city!');
+    resultMessage += 'You did not enter a valid city!\n';
 } else {
     input++;
 }
 
 // Activity validation
 if (userActivity === null || userActivity.trim() === '') {
-    alert('You did not enter a valid activity!');
+    resultMessage += 'You did not enter a valid activity!\n';
 } else {
     input++;
 }
@@ -31,27 +30,31 @@ if (userActivity === null || userActivity.trim() === '') {
 if (input === 3) {
     switch (userActivity.trim()) {
         case 'Football':
-            alertSport = 'Do you want to be a Messi?';
+            resultMessage += 'Do you want to be a Messi?';
             break;
         case 'Basketball':
-            alertSport = 'Do you want to be Kobe Bryant?';
+            resultMessage += 'Do you want to be Kobe Bryant?';
             break;
         case 'Golf':
-            alertSport = 'Do you want to be Bernhard Langer?';
+            resultMessage += 'Do you want to be Bernhard Langer?';
             break;
         default:
-            alertSport = 'I wish you success in this sport';
+            resultMessage += 'I wish you success in this sport';
     }
     switch (userCity.trim()) {
         case 'Kiev':
         case 'Amsterdam':
         case 'Madrid':
-            alertCity = 'Oh cool you live in the capital!';
+            resultMessage += '\nOh cool you live in the capital!';
             break;
         default:
-            alertCity = 'You live in a beautiful city!';
+            resultMessage += '\nYou live in a beautiful city!';
     }
-    alert('You are ' + userAge + ' years old \n' + alertCity + '\n' + alertSport);
+    resultMessage = 'You are ' + userAge + ' years old \n' + resultMessage;
+}
+
+if (resultMessage) {
+    alert(resultMessage);
 }
 
 console.log(input);
