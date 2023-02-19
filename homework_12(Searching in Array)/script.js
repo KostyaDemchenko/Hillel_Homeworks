@@ -78,7 +78,7 @@ for (let i = 0; i < arr.length; i++) {
   }
 }
 
-// 10
+// 10 Output(THE LARGEST AMONG THE ELEMENTS OF THE ARRAY)
 let maxNum = arr[0];
 
 for (let i = 1; i < arr.length; i++) {
@@ -87,9 +87,13 @@ for (let i = 1; i < arr.length; i++) {
   }
 }
 
+let newArr = [];
+
 for (let i = 0; i < arr.length; i++) {
-  if (arr[i] !== maxNum) {
-    arr[i] = 0;
+  if (arr[i] === maxNum) {
+    newArr.push(arr[i]);
+  } else {
+    newArr.push(0);
   }
 }
 
@@ -116,4 +120,4 @@ console.log("Sum of odd positive elements: " + sumOddPositiveElements);
 // 9 Output(PRODUCT OF POSITIVE ELEMENTS)
 console.log("Product of positive elements: " + product);
 // 10 Output(THE LARGEST AMONG THE ELEMENTS OF THE ARRAY)
-console.log("New array(ONLY MAX ELEMENT): " + arr);
+console.log("New array(ONLY MAX ELEMENT): " + newArr);
